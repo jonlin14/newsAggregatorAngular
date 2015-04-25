@@ -14,16 +14,23 @@
             <li ng-repeat="item in programs | orderBy:'vote':true">
                 <span ng-click='addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
                 <span ng-click='lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
-                <span>{{ item.vote }}</span> <a ng-click='showStory = true'>{{ item.title.$text }}</a>
-                <span ng-show='showStory' ng-click='showStory = false'>{{ item.teaser.$text}}</p></span>
+                <span>{{ item.vote }}</span>
+                <a ng-click='showStory = true'>{{ item.title.$text }}</a>
+                <span ng-show='showStory' ng-click='showStory = false'><p>{{ item.teaser.$text}}</p></span>
+                <form ng-submit = 'addComment(item,comment)'>
+                <input type="text" ng-model="comment">
+                <button class="btn btn-primary">Comment</button>
+                </form>
+                <div class ="comments">
+                  <ul>
+                    <li ng-repeat='element in item.comments'>
+                      {{ element }}
+                    </li>
+                  </ul>
+                </div>
 
             </li>
         </ul>
-        <ul>
-        <li ng-repeat='item in usaPrograms'>
-          {{ item.name }}
-        </li>
-      </ul>
     </body>
     <script src="lib/angular.js"></script>
     <script src="lib/angular-ui-router.js"></script>

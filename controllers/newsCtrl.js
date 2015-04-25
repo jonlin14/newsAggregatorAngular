@@ -1,5 +1,7 @@
 myApp.controller('newsCtrl', function newsCtrl($scope, $http, $interval) {
-
+    $scope.addComment = function(item,comment) {
+        item.comments.push(comment);
+    }
 
     $scope.addValue = function(item) {
         item.vote += 1;
@@ -16,12 +18,15 @@ myApp.controller('newsCtrl', function newsCtrl($scope, $http, $interval) {
         $scope.programs = data.list.story
         for (i = 0; i < $scope.programs.length; i++) {
             $scope.programs[i].vote = 0;
+            $scope.programs[i].comments = [];
         }
 
     }).error(function(data,status) {
         console.alert('ERROR')
     });
     }
+
+
 
     nprCall();
     $interval(nprCall, 100000);
