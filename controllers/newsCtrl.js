@@ -47,7 +47,10 @@ myApp.controller('newsCtrl', function newsCtrl($scope, $http, $interval) {
         url: 'http://api.nytimes.com/svc/topstories/v1/home.jsonp?api-key=8b01e99a9719678470fe5f1e20173c4c:12:61993658&callback=JSON_CALLBACK'
       })
       callbackTopStories = function(data) {
-        $scope.nytPrograms = data.results;
+        $scope.nytPrograms = data.results
+        for (i = 0; i < $scope.nytPrograms.length; i++) {
+            $scope.nytPrograms[i].vote = 0;
+            $scope.nytPrograms[i].comments = [];
       }
       // .success(function(data,status) {
       //   $scope.nytPrograms = data
@@ -55,6 +58,7 @@ myApp.controller('newsCtrl', function newsCtrl($scope, $http, $interval) {
 
       //});
     }
+  }
 
     nytCall();
   //  usaCall();

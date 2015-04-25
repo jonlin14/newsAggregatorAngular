@@ -43,6 +43,9 @@
           <h2>New York Times!</h2>
         <ul>
           <li ng-repeat='item in nytPrograms'>
+            <span ng-click='addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
+            <span ng-click='lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
+            <span>{{ item.vote }}</span>
             <a ng-click='showStory = true'>{{ item.title }}</a>
             <span ng-show='showStory' ng-click='showStory = false'>{{ item.abstract }}</span>
 
