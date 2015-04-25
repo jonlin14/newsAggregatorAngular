@@ -12,35 +12,41 @@
     <body ng-controller='newsCtrl'>
       <div class="container">
         <div class="row">
+          <div class="col-md-6">
+              <h2> NPR </h2>
+              <ul>
+                  <li ng-repeat="item in programs | orderBy:'vote':true">
+                      <span ng-click='addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
+                      <span ng-click='lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
+                      <span>{{ item.vote }}</span>
+                      <a ng-click='showStory = true'>{{ item.title.$text }}</a>
+                      <p><button class = "btn btn-success btn-xs" ng-hide='commentClicked' ng-click='commentClicked = true'>Comment</button></p>
+                      <div class = "commentField" ng-show="commentClicked">
+                        <form ng-submit = 'addComment(item,comment)'>
+                        <input type="text" ng-model="comment">
+                        <button class="btn btn-primary btn-xs" ng-click='commentClicked = false'>Done</button>
+                        </form>
+                      </div>
+                      <span ng-show='showStory' ng-click='showStory = false'><p>{{ item.teaser.$text}}</p></span>
+
+
+                        <ul>
+                          <li ng-repeat='element in item.comments'>
+                            {{ element }}
+                          </li>
+                        </ul>
+
+
+                  </li>
+              </ul>
+            </div>
         <div class="col-md-6">
-        <ul>
-            <li ng-repeat="item in programs | orderBy:'vote':true">
-                <span ng-click='addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
-                <span ng-click='lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
-                <span>{{ item.vote }}</span>
-                <a ng-click='showStory = true'>{{ item.title.$text }}</a>
-                <p><button class = "btn btn-success btn-xs" ng-hide='commentClicked' ng-click='commentClicked = true'>Comment</button></p>
-                <div class = "commentField" ng-show="commentClicked">
-                  <form ng-submit = 'addComment(item,comment)'>
-                  <input type="text" ng-model="comment">
-                  <button class="btn btn-primary btn-xs" ng-click='commentClicked = false'>Done</button>
-                  </form>
-                </div>
-                <span ng-show='showStory' ng-click='showStory = false'><p>{{ item.teaser.$text}}</p></span>
-
-
-                  <ul>
-                    <li ng-repeat='element in item.comments'>
-                      {{ element }}
-                    </li>
-                  </ul>
-
-
-            </li>
-        </ul>
+          <h2>New York Times!</h2>
         <ul>
           <li ng-repeat="item in nytPrograms">
             {{ item.title }}
+
+            <a href="{{ item.url }}"><button class ="btn btn-primary btn-xs">Link</button> </a>
           </li>
         </ul>
       </div>
