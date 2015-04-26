@@ -9,7 +9,7 @@ myApp.config(function($stateProvider) {
   $stateProvider.state('nyt', {
     url: '/nyt',
     templateUrl: "partials/nyt.html",
-    controller: "newsCtrl"
+    controller: "nytCtrl"
   });
   $stateProvider.state('npr', {
     url: '/npr',
