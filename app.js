@@ -14,7 +14,7 @@ myApp.config(function($stateProvider) {
   $stateProvider.state('npr', {
     url: '/npr',
     templateUrl: "partials/npr.html",
-    controller: "newsCtrl"
+    controller: "nprCtrl"
   });
 
 })

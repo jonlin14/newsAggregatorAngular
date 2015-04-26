@@ -1,4 +1,4 @@
-myApp.controller('newsCtrl', function newsCtrl($scope, $http, $interval, nprFactory) {
+myApp.controller('nprCtrl', function nprCtrl($scope, $http, $interval, nprFactory) {
     nprFactory.fetch().then(function(data) {
         $scope.nprPrograms = data.list.story;
         for (i = 0; i < $scope.nprPrograms.length; i++) {
