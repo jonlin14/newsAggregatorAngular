@@ -16,4 +16,5 @@ myApp.config(function($stateProvider) {
     templateUrl: "partials/npr.html",
     controller: "newsCtrl"
   });
+
 })

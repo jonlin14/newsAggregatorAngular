@@ -20,34 +20,18 @@ myApp.controller('newsCtrl', function newsCtrl($scope, $http, $interval) {
         for (i = 0; i < $scope.programs.length; i++) {
             $scope.programs[i].vote = 0;
             $scope.programs[i].comments = [];
-
         }
-        $scope.$watch('programs', console.log(''))
-
-
-
     }).error(function(data,status) {
         console.alert('ERROR')
     });
     }
-
-    // var usaCall = function() {
-    //   $http({
-    //     method: 'JSONP',
-    //     url: 'http://api.usatoday.com/open/articles/topnews/home?count=10&days=0&page=0&encoding=json&api_key=wvb99kyuhhhnens7f35tab2e' + '&callback=JSON_CALLBACK'
-    //   }).success(function(data, status) {
-    //     $scope.usaPrograms = data
-    //   }).error(function(data,status) {
-    //
-    //   });
-    // }
 
     var nytCall = function() {
       $http({
         method: 'JSONP',
         url: 'http://api.nytimes.com/svc/topstories/v1/home.jsonp?api-key=8b01e99a9719678470fe5f1e20173c4c:12:61993658&callback=JSON_CALLBACK'
       }).success(function(data,status) {
-         $scope.nytPrograms = data
+         $scope.nytPrograms = data.results
       }).error(function(data,status) {
         console.log('error111');
       });
@@ -69,7 +53,7 @@ myApp.controller('newsCtrl', function newsCtrl($scope, $http, $interval) {
 
 
     nytCall();
-  //  usaCall();
+
     nprCall();
     // $interval(nprCall, 10000);
 
