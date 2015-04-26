@@ -1,7 +1,7 @@
 <div class="flexbox">
     <h2> NPR </h2>
     <ul>
-        <li class="flexChild" ng-repeat="item in programs | orderBy:'vote':true">
+        <li class="flexChild" ng-repeat="item in nprPrograms | orderBy:'vote':true">
             <span ng-click='addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
             <span ng-click='lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
             <span>{{ item.vote }}</span>
