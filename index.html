@@ -4,72 +4,20 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
         <title>News Collator</title>
-
     </head>
     <div class = "jumbotron">
         <h2> News Collator </h2>
     </div>
-    <body ng-controller='newsCtrl'>
+    <body>
+      <button class="button btn-primary" ui-sref="home">Go Home!</button>
+      <button class="button btn-success" ui-sref="nyt">NYT</button>
+      <button class="button btn-danger" ui-sref="npr">NPR</button>
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-              <h2> NPR </h2>
-              <ul>
-                  <li ng-repeat="item in programs | orderBy:'vote':true">
-                      <span ng-click='addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
-                      <span ng-click='lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
-                      <span>{{ item.vote }}</span>
-                      <a ng-click='showStory = true'>{{ item.title.$text }}</a>
-                      <p><button class = "btn btn-success btn-xs" ng-hide='commentClicked' ng-click='commentClicked = true'>Comment</button></p>
-                      <div class = "commentField" ng-show="commentClicked">
-                        <form ng-submit = 'addComment(item,comment)'>
-                        <input type="text" ng-model="comment">
-                        <button class="btn btn-primary btn-xs" ng-click='commentClicked = false'>Done</button>
-                        </form>
-                      </div>
-                      <span ng-show='showStory' ng-click='showStory = false'><p>{{ item.teaser.$text}}</p></span>
-                        <ul>
-                          <li ng-repeat='element in item.comments'>
-                            {{ element }}
-                          </li>
-                        </ul>
-
-
-                  </li>
-              </ul>
-
-            </div>
-        <div class="col-md-6">
-          <h2>New York Times!</h2>
-        <ul>
-          <li ng-repeat="item in nytPrograms | orderBy:'vote':true">
-            <span ng-click='addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
-            <span ng-click='lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
-            <span>{{ item.vote }}</span>
-            <a ng-click='showStory = true'>{{ item.title }}</a>
-            <br>
-            <button class = "btn btn-success btn-xs" ng-hide='commentClicked' ng-click='commentClicked = true'>Comment</button>
-            <div class = "commentField" ng-show="commentClicked">
-              <form ng-submit = 'addComment(item,comment)'>
-              <input type="text" ng-model="comment">
-              <button class="btn btn-primary btn-xs" ng-click='commentClicked = false'>Done</button>
-              </form>
-            </div>
-            <span ng-show='showStory' ng-click='showStory = false'>{{ item.abstract }}</span>
-            <a href="{{ item.url }}"><button class ="btn btn-primary btn-xs">Link</button> </a>
-            <ul>
-              <li ng-repeat='element in item.comments'>
-                {{ element }}
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <div ui-view></div>
       </div>
-      </div>
-      </div>
+
     </body>
     <script src="lib/angular.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-cookies.js"></script>
     <script src="lib/angular-ui-router.js"></script>
     <script src="app.js"></script>
     <script src="controllers/newsCtrl.js"></script>
