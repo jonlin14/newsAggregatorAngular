@@ -14,6 +14,8 @@
               </form>
             </div>
             <span ng-show='showStory' ng-click='showStory = false'><p>{{ item.teaser.$text}}</p></span>
+            <a href="{{ item.link[0].$text }}"><button class ="btn btn-primary btn-xs">Link</button> </a>
+
               <ul>
                 <li ng-repeat='element in item.comments'>
                   {{ element }}
