@@ -1,32 +1,28 @@
-myApp.controller('newsCtrl', function newsCtrl($scope, $http, $interval, newsFactory) {
-      newsFactory.fetch().then(function(data) {
-          $scope.nprPrograms = data.list.story;
-      });
-  });
+myApp.controller('newsCtrl', function newsCtrl($scope, $http, $interval, nprFactory) {
+    nprFactory.fetch().then(function(data) {
+        $scope.nprPrograms = data.list.story;
+        for (i = 0; i < $scope.nprPrograms.length; i++) {
+            $scope.nprPrograms[i].vote = 0;
+            $scope.nprPrograms[i].comments = [];
+        }
+    });
+    $scope.addComment = function(item,comment) {
+        item.comments.push(comment);
+    }
+    $scope.addValue = function(item) {
+        item += 1;
+    }
+    $scope.lowerValue = function(item) {
+        item -= 1;
+    }
 
-
-//     $scope.addComment = function(item,comment) {
-//         item.comments.push(comment);
-//
-//     }
-//
-//     $scope.addValue = function(item) {
-//         item.vote += 1;
-//     }
-//     $scope.lowerValue = function(item) {
-//         item.vote -= 1;
-//     }
-//
 //     // var nprCall = function() {
 //     // $http({
 //     //     method: 'JSONP',
 //     //     url: 'http://api.npr.org/query?id=1001&fields=all&output=JSON&apiKey=MDE4OTMxNTM0MDE0Mjk2NzAwMzc1ODk3YQ001' + '&callback=JSON_CALLBACK'
 //     // }).success(function(data, status) {
 //     //     $scope.programs = data.list.story
-//     //     for (i = 0; i < $scope.programs.length; i++) {
-//     //         $scope.programs[i].vote = 0;
-//     //         $scope.programs[i].comments = [];
-//     //     }
+
 //     // }).error(function(data,status) {
 //     //     console.alert('ERROR')
 //     // });
@@ -64,4 +60,4 @@ myApp.controller('newsCtrl', function newsCtrl($scope, $http, $interval, newsFac
 //     // $interval(nprCall, 10000);
 //
 //
-// });
+});
