@@ -2,17 +2,23 @@
 Jonathan Lin
 
 ##Date
-April 21, 2015
+April 21, 2015 - Current
 
 
 
 ##Description
-This application will simulate a reddit site called hacker news. It will allow a user to click on a generated news story and "upvote" or "downvote" it. The list will then be sorted by the amount of upvotes or downvotes
+This application will serve as a aggregator for various news sites. It will have individual views with news populated from different media APIs. It is currently connected to NPR and NYT api. User will be able to upvote and downvote the list to sort the stories and they will also be able to comment on the stories (these features are only local at the moment and are not persistent). Users will be able to click on the story title to show a short summary of the story (click the story to hide it) and will be able to click a link button to go directly to the story.
 
 ##Technologies Used
 JavaScript
 <br>
 Angular JS
+<br>
+New York Times Articles API
+<br>
+National Public Radio API
+<br>
+JSONP
 <br>
 HTML
 <br>
@@ -24,7 +30,10 @@ CSS with Bootstrap
 
 
 ##Use and Editing
-To use the app, download the files from github. Open the index.html file in the browser of your choice. The webpage will open and allow the visitor to use the site.  <br>
+To use the app, download the files from github. Open the index.html file in the browser of your choice. Open a terminal window and go to the project root folder. Start a server with either php or python at the root folder The webpage will open and allow the visitor to use the site.
+<br>
+Php -> php -S localhost:8000
+Python -> python -m simpleHTTPServer 
 
 ##Copyright (c) Jonathan Lin
 
