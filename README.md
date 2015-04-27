@@ -26,6 +26,8 @@ CSS with Bootstrap
 <br>
 
 
+## To-do
+Move votes and comments to inside the factory. Set up the promise handling in the scope to respond if an error occurs. Execute API calls when user enters page to speed up load times. Refactor code. Make votes and comments persistent. 
 
 
 
@@ -33,7 +35,7 @@ CSS with Bootstrap
 To use the app, download the files from github. Open the index.html file in the browser of your choice. Open a terminal window and go to the project root folder. Start a server with either php or python at the root folder The webpage will open and allow the visitor to use the site.
 <br>
 Php -> php -S localhost:8000
-Python -> python -m simpleHTTPServer 
+Python -> python -m simpleHTTPServer
 
 ##Copyright (c) Jonathan Lin
 
