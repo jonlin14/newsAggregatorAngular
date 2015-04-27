@@ -21,3 +21,13 @@
 h2 {
   text-align: center;
 }
+
+.navbar {
+  margin-bottom: 0;
+  background-color: orange;
+}
+
+img {
+  height: auto;
+  width: auto;
+}
