@@ -2,7 +2,7 @@
 Jonathan Lin
 
 ##Date
-April 21, 2015 - Current
+April 21, 2015 - Current (This application is still being updated)
 
 
 
@@ -27,7 +27,7 @@ CSS with Bootstrap
 
 
 ## To-do
-Move votes and comments to inside the factory. Set up the promise handling in the scope to respond if an error occurs. Execute API calls when user enters page to speed up load times. Refactor code. Make votes and comments persistent. 
+Move votes and comments to inside the factory. Set up the promise handling in the scope to respond if an error occurs. Execute API calls when user enters page to speed up load times. Refactor code. Make votes and comments persistent.
 
 
 
