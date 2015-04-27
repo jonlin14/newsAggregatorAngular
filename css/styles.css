@@ -18,27 +18,32 @@
   margin: auto;
 }
 
-h2 {
-  text-align: center;
-}
-
 .navbar {
   margin-bottom: 0;
   background-color: #FF6600;
 }
 
-img {
-  height: auto;
-  width: auto;
-  position: fixed;
-
+h2 {
+  text-align: center;
 }
 
+li a {
+  cursor:pointer;
+}
 
-
+li span {
+  cursor:pointer;
+}
 
 @media (max-width : 1000px) {
   #gator {
     display:none;
   }
+}
+
+#gator {
+  height: auto;
+  width: auto;
+  position: fixed;
+
 }
