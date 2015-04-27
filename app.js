@@ -3,7 +3,10 @@ var myApp = angular.module('myApp', ['ui.router']);
 myApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('home', {
     url: '/',
-    templateUrl: "partials/home.html"
+    templateUrl: "partials/home.html",
+    controller: "nytCtrl",
+    controller: "nprCtrl"
+
 
   });
   $stateProvider.state('nyt', {
