@@ -30,4 +30,5 @@ h2 {
 img {
   height: auto;
   width: auto;
+  position: fixed;
 }
