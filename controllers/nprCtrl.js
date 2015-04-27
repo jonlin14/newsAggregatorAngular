@@ -5,5 +5,14 @@ myApp.controller('nprCtrl', function nprCtrl($scope, $http, $interval, nprFactor
             $scope.nprPrograms[i].vote = 0;
             $scope.nprPrograms[i].comments = [];
         }
+        $scope.addComment = function(item,comment) {
+            item.comments.push(comment);
+        }
+        $scope.addValue = function(item) {
+            item.vote += 1;
+        }
+        $scope.lowerValue = function(item) {
+            item.vote -= 1;
+        }
     });
 });

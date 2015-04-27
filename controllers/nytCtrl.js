@@ -11,13 +11,5 @@ myApp.controller('nytCtrl', function nytCtrl($scope, $http, $interval, nytFactor
 
     });
 
-    $scope.addComment = function(item,comment) {
-        item.comments.push(comment);
-    }
-    $scope.addValue = function(item) {
-        item.vote += 1;
-    }
-    $scope.lowerValue = function(item) {
-        item.vote -= 1;
-    }
+
   });

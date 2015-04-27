@@ -6,7 +6,6 @@
             <span ng-click='lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
             <span>{{ item.vote }}</span>
             <a ng-click='showStory = true'>{{ item.title.$text }}</a>
-            <p><button class = "btn btn-success btn-xs" ng-hide='commentClicked' ng-click='commentClicked = true'>Comment</button></p>
             <div class = "commentField" ng-show="commentClicked">
               <form ng-submit = 'addComment(item,comment)'>
               <input type="text" ng-model="comment">
@@ -14,7 +13,8 @@
               </form>
             </div>
             <span ng-show='showStory' ng-click='showStory = false'><p>{{ item.teaser.$text}}</p></span>
-            <a href="{{ item.link[0].$text }}"><button class ="btn btn-primary btn-xs">Link</button> </a>
+            <p><button class = "btn btn-success btn-xs" ng-hide='commentClicked' ng-click='commentClicked = true'>Comment</button>
+            <a href="{{ item.link[0].$text }}"><button class ="btn btn-primary btn-xs">Link</button> </a></p>
 
               <ul>
                 <li ng-repeat='element in item.comments'>
