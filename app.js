@@ -1,8 +1,8 @@
 var myApp = angular.module('myApp', ['ui.router']);
 
-myApp.config(function($stateProvider) {
+myApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('home', {
-    url: "",
+    url: '/',
     templateUrl: "partials/home.html"
 
   });
@@ -16,5 +16,10 @@ myApp.config(function($stateProvider) {
     templateUrl: "partials/npr.html",
     controller: "nprCtrl"
   });
+  $urlRouterProvider.otherwise('/');
 
 })
+
+// myApp.config(function($urlRouteProvider) {
+//   $urlRouterProvider.otherwise('');
+// })
