@@ -24,11 +24,21 @@ h2 {
 
 .navbar {
   margin-bottom: 0;
-  background-color: orange;
+  background-color: #FF6600;
 }
 
 img {
   height: auto;
   width: auto;
   position: fixed;
+
+}
+
+
+
+
+@media (max-width : 1000px) {
+  #gator {
+    display:none;
+  }
 }
