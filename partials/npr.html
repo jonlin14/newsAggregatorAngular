@@ -5,8 +5,8 @@
             <span ng-click='addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
             <span ng-click='lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
             <span>{{ item.vote }}</span>
-            <a ng-click='showStory = true'>{{ item.title.$text }}</a>
-            <p><span ng-show='showStory' ng-click='showStory = false'>{{ item.teaser.$text}}</span></p>
+            <a ng-click='showStory = !showStory'>{{ item.title.$text }}</a>
+            <p ng-show='showStory'>{{ item.teaser.$text}}</p>
             <div class = "commentField" ng-show="commentClicked">
               <form ng-submit = 'addComment(item,comment)'>
               <input type="text" ng-model="comment">
