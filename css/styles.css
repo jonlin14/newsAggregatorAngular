@@ -23,6 +23,13 @@
   background-color: #FF6600;
 }
 
+.glyphicon {
+  display:inline;
+}
+.vote {
+  display:inline;
+}
+
 h2 {
   text-align: center;
 }
@@ -35,13 +42,7 @@ li span {
   cursor:pointer;
 }
 
-@media (max-width : 1000px) {
-  #gator {
-    display:none;
-  }
-}
-
-@media (max-width : 500px) {
+@media (max-width : 400px) {
   .glyphicon {
     display:none;
   }
@@ -49,6 +50,14 @@ li span {
     display:none;
   }
 }
+
+@media (max-width : 1000px) {
+  #gator {
+    display:none;
+  }
+}
+
+
 
 #gator {
   height: auto;
