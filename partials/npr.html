@@ -4,7 +4,7 @@
         <li class="flexChild" ng-repeat="item in nprPrograms | orderBy:'vote':true">
             <span ng-click='addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
             <span ng-click='lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
-            <span>{{ item.vote }}</span>
+            <span class = 'vote'>{{ item.vote }}</span>
             <a ng-click='showStory = !showStory'>{{ item.title.$text }}</a>
             <p ng-show='showStory'>{{ item.teaser.$text}}</p>
             <div class = "commentField" ng-show="commentClicked">
@@ -14,7 +14,7 @@
               </form>
             </div>
             <p><button class = "btn btn-success btn-xs" ng-hide='commentClicked' ng-click='commentClicked = true'>Comment</button>
-            <a href="{{ item.link[0].$text }}"><button class ="btn btn-primary btn-xs">Link</button> </a></p>
+            <a href="{{ item.link[0].$text }}" target="_blank"><button class ="btn btn-primary btn-xs">Link</button> </a></p>
             <ul>
                 <li ng-repeat='element in item.comments'>
                   {{ element }}

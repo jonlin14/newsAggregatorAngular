@@ -41,6 +41,15 @@ li span {
   }
 }
 
+@media (max-width : 500px) {
+  .glyphicon {
+    display:none;
+  }
+  .vote {
+    display:none;
+  }
+}
+
 #gator {
   height: auto;
   width: auto;
