@@ -1,4 +1,4 @@
-myApp.controller('nytCtrl', ['$http', '$interval', 'nytFactory', function($http, $interval, nytFactory) {
+myApp.controller('nytCtrl', ['$http', '$interval', 'nytFactory', 'commentService', function($http, $interval, nytFactory, commentService) {
 		var vm = this;
     window.callbackTopStories = function(data) {
 	    vm.nytPrograms = data.results;
@@ -12,14 +12,10 @@ myApp.controller('nytCtrl', ['$http', '$interval', 'nytFactory', function($http,
 
     });
 
-    vm.addComment = function(item,comment) {
-        item.comments.push(comment);
-    }
-    vm.addValue = function(item) {
-        item.vote += 1;
-    }
-    vm.lowerValue = function(item) {
-        item.vote -= 1;
-    }
+		vm.addComment = commentService.addComment;
 
-  }]);
+		vm.addValue = commentService.addValue;
+
+		vm.lowerValue = commentService.lowerValue;
+
+}]);
