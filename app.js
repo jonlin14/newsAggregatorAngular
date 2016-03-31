@@ -12,13 +12,13 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('nyt', {
     url: '/nyt',
     templateUrl: "partials/nyt.html",
-    controller: "nytCtrl",
+    controller: "NytCtrl",
 		controllerAs: "nyt",
   });
   $stateProvider.state('npr', {
     url: '/npr',
     templateUrl: "partials/npr.html",
-    controller: "nprCtrl",
+    controller: "NprCtrl",
 		controllerAs: "npr",
   });
   $urlRouterProvider.otherwise('/');
