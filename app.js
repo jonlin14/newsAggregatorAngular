@@ -17,7 +17,8 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('npr', {
     url: '/npr',
     templateUrl: "partials/npr.html",
-    controller: "nprCtrl"
+    controller: "nprCtrl",
+		controllerAs: "npr",
   });
   $urlRouterProvider.otherwise('/');
 
