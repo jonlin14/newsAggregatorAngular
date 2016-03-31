@@ -1,4 +1,4 @@
-myApp.controller('nytCtrl', function nytCtrl($scope, $http, $interval, nytFactory) {
+myApp.controller('nytCtrl', ['$scope', '$http', '$interval', 'nytFactory', function($scope, $http, $interval, nytFactory) {
     window.callbackTopStories = function(data) {
     $scope.nytPrograms = data.results;
     for (i = 0; i < $scope.nytPrograms.length; i++) {
@@ -21,4 +21,4 @@ myApp.controller('nytCtrl', function nytCtrl($scope, $http, $interval, nytFactor
         item.vote -= 1;
     }
 
-  });
+  }]);

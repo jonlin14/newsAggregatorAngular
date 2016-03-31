@@ -1,4 +1,4 @@
-myApp.controller('nprCtrl', function nprCtrl($scope, $http, $interval, nprFactory) {
+myApp.controller('nprCtrl', ['$scope', '$http', '$interval', 'nprFactory', function($scope, $http, $interval, nprFactory) {
     nprFactory.fetch().then(function(data) {
         $scope.nprPrograms = data.list.story;
         for (i = 0; i < $scope.nprPrograms.length; i++) {
@@ -17,4 +17,4 @@ myApp.controller('nprCtrl', function nprCtrl($scope, $http, $interval, nprFactor
         item.vote -= 1;
     }
 
-});
+}]);
