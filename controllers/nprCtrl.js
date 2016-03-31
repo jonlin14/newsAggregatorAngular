@@ -18,6 +18,4 @@ myApp.controller('nprCtrl', ['$http', '$interval', 'nprFactory', function($http,
     vm.lowerValue = function(item) {
         item.vote -= 1;
     }
-		vm.name = 'John';
-		console.log(vm);
 }]);
