@@ -1,14 +1,14 @@
 <div class="flexbox">
     <h2> NPR </h2>
     <ul>
-        <li class="flexChild" ng-repeat="item in nprPrograms | orderBy:'vote':true">
-            <span ng-click='addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
-            <span ng-click='lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
+        <li class="flexChild" ng-repeat="item in npr.nprPrograms | orderBy:'vote':true">
+            <span ng-click='npr.addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
+            <span ng-click='npr.lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
             <span class = 'vote'>{{ item.vote }}</span>
             <a ng-click='showStory = !showStory'>{{ item.title.$text }}</a>
             <p ng-show='showStory'>{{ item.teaser.$text}}</p>
             <div class = "commentField" ng-show="commentClicked">
-              <form ng-submit = 'addComment(item,comment)'>
+              <form ng-submit = 'npr.addComment(item,comment)'>
               <input type="text" ng-model="comment">
               <button class="btn btn-primary btn-xs" ng-click='commentClicked = false'>Done</button>
               </form>
