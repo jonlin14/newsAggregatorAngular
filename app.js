@@ -12,7 +12,8 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('nyt', {
     url: '/nyt',
     templateUrl: "partials/nyt.html",
-    controller: "nytCtrl"
+    controller: "nytCtrl",
+		controllerAs: "nyt",
   });
   $stateProvider.state('npr', {
     url: '/npr',
