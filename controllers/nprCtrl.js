@@ -1,4 +1,4 @@
-myApp.controller('NprCtrl', ['$http', '$interval', 'nprFactory', 'commentService', function($http, $interval, nprFactory, commentService) {
+myApp.controller('NprCtrl', ['$http', '$interval', 'nprFactory', function($http, $interval, nprFactory) {
 		var vm = this;
     nprFactory.fetch().then(function(data) {
         vm.nprPrograms = data.list.story;
@@ -12,10 +12,6 @@ myApp.controller('NprCtrl', ['$http', '$interval', 'nprFactory', 'commentService
 
     });
 
-    vm.addComment = commentService.addComment;
 
-    vm.addValue = commentService.addValue;
-
-    vm.lowerValue = commentService.lowerValue;
 
 }]);
