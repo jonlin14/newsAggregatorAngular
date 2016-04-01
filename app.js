@@ -4,8 +4,8 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('home', {
     url: '/',
     templateUrl: "partials/home.html",
-    controller: "nytCtrl",
-    controller: "nprCtrl"
+    controller: "NytCtrl",
+    controller: "NprCtrl"
 
 
   });
@@ -25,6 +25,28 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 
 })
 
-// myApp.config(function($urlRouteProvider) {
-//   $urlRouterProvider.otherwise('');
-// })
+myApp.directive('headlines', function() {
+	return {
+		restrict: 'AE',
+		replace: true,
+		templateUrl: 'directives/headlines.html',
+		bindToController: true,
+		scope: {
+			item : '=',
+			addValue: '&',
+			lowerValue: '&',
+			addComment: '&',
+		},
+		link: function(scope, elements, attributes) {
+			scope.addValue = function(item) {
+					item.vote += 1;
+			},
+			scope.addComment = function(item,comment) {
+						item.comments.push(comment);
+			},
+			scope.lowerValue = function(item) {
+						item.vote -= 1;
+				}
+		}
+	}
+});

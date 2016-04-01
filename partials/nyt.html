@@ -3,28 +3,7 @@
 
     <ul>
       <li class="flexChild" ng-repeat="item in nyt.nytPrograms | orderBy:'vote':true">
-        <!-- Upvote and Downvote the story to sort  -->
-        <span ng-click='nyt.addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
-        <span ng-click='nyt.lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
-        <span class = 'vote'>{{ item.vote }}</span>
-        <!-- Click title to display story -->
-        <a ng-click='showStory = !showStory'>{{ item.title }}</a>
-        <!-- Click on story to hide -->
-        <p ng-show='showStory'>{{ item.abstract }}</p>
-        <div class = "commentField" ng-show="commentClicked">
-          <form ng-submit = 'nyt.addComment(item,comment)'>
-          <input type="text" ng-model="comment">
-          <button class="btn btn-primary btn-xs" ng-click='commentClicked = false'>Done</button>
-          </form>
-        </div>
-        <p><button class = "btn btn-success btn-xs" ng-hide='commentClicked' ng-click='commentClicked = true'>Comment</button>
-        <a href="{{ item.url }}" + target="_blank"><button class ="btn btn-primary btn-xs">Link</button> </a></p>
-
-        <ul>
-          <li ng-repeat='element in item.comments'>
-            {{ element }}
-          </li>
-        </ul>
+        <headlines item="item" add-value="addValue(item)" lower-value="lowerValue(item)" add-comment="addComment(item)"></headlines>
       </li>
     </ul>
 </div>

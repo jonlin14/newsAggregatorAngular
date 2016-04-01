@@ -2,27 +2,8 @@
     <h2> NPR </h2>
     <ul>
         <li class="flexChild" ng-repeat="item in npr.nprPrograms | orderBy:'vote':true">
-            <span ng-click='npr.addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
-            <span ng-click='npr.lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
-            <span class = 'vote'>{{ item.vote }}</span>
-            <a ng-click='showStory = !showStory'>{{ item.title.$text }}</a>
-            <p ng-show='showStory'>{{ item.teaser.$text}}</p>
-            <div class = "commentField" ng-show="commentClicked">
-              <form ng-submit = 'npr.addComment(item,comment)'>
-              <input type="text" ng-model="comment">
-              <button class="btn btn-primary btn-xs" ng-click='commentClicked = false'>Done</button>
-              </form>
-            </div>
-            <p><button class = "btn btn-success btn-xs" ng-hide='commentClicked' ng-click='commentClicked = true'>Comment</button>
-            <a href="{{ item.link[0].$text }}" target="_blank"><button class ="btn btn-primary btn-xs">Link</button> </a></p>
-            <ul>
-                <li ng-repeat='element in item.comments'>
-                  {{ element }}
-                </li>
-              </ul>
-
-
-        </li>
+					<headlines item="item" add-value="addValue(item)" lower-value="lowerValue(item)" add-comment="addComment(item)"></headlines>
+				</li>
     </ul>
 
   </div>
